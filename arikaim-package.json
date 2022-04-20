@@ -1,0 +1,14 @@
+{
+    "title": "NLP",
+    "name": "nlp",
+    "package-type": "module",
+    "version": "1.0.0",
+    "class": "Nlp",
+    "type": "package",
+    "description": "Natural Language Processing api drivers.",
+    "repository": "https://github.com/arikaim/nlp-module.git",
+    "require": {
+        "composer": [
+        ]
+    }
+}
