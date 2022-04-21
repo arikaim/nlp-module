@@ -58,19 +58,26 @@ class HuggingfaceDriver extends AbstractApiClient implements
      *
      * @param string $input
      * @param array|null $options
-     * @return string|null
+     * @return string|null|array
      */
-    public function generateText(string $input, ?array $options = null): ?string
+    public function generateText(string $input, ?array $options = null)
     {   
         $params = [
             'model' => $options['model'] ?? 'gpt2'
         ];
-        $postFields['options'] = $input;
+        $postFields['inputs'] = $input;
         $postFields = (\is_array($options) == true) ? \array_merge($postFields,$options) : $postFields;
-
         $apiResponse = $this->call('TextGeneration',$params,$postFields);
-       
-        return ($apiResponse->hasError() == true) ? null : $apiResponse->getField('generated_text');
+        if ($apiResponse->hasError() == true) {
+            return null;
+        }
+        $data = $apiResponse->toArray();
+     
+        foreach($data as $item) {
+            $items[] = $item['generated_text'] ?? null;
+        }
+
+        return $items;     
     }
 
     /**
@@ -98,7 +105,7 @@ class HuggingfaceDriver extends AbstractApiClient implements
             $property
                 ->title('Api Key')
                 ->type('text')     
-                ->requred(true)         
+                ->required(true)  
                 ->value('');                         
         }); 
     }

@@ -3,7 +3,7 @@
 ![GPLv3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 
 
-Natural Language Processing api rivers for Arikaim CMS 
+Natural Language Processing api drivers for Arikaim CMS 
 
 
 #### Drivers

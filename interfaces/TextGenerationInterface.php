@@ -22,7 +22,7 @@ interface TextGenerationInterface
      *
      * @param string $input
      * @param array|null $options
-     * @return string|null
+     * @return string|null|array
      */
-    public function generateText(string $input, ?array $options = null): ?string;
+    public function generateText(string $input, ?array $options = null);
 }
