@@ -2,7 +2,7 @@
     "title": "NLP",
     "name": "nlp",
     "package-type": "module",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "class": "Nlp",
     "type": "package",
     "description": "Natural Language Processing api drivers.",

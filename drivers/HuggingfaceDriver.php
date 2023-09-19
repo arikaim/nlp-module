@@ -97,7 +97,7 @@ class HuggingfaceDriver extends AbstractApiClient implements
      * Create driver config properties array
      *
      * @param Arikaim\Core\Collection\Properties $properties
-     * @return array
+     * @return void
      */
     public function createDriverConfig($properties)
     { 
